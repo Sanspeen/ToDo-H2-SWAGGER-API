@@ -1,15 +1,20 @@
 package com.sanspeen.todoapp.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.sanspeen.todoapp.persistence.entity.Task;
+import com.sanspeen.todoapp.service.DTO.TaskDTO;
+import com.sanspeen.todoapp.service.TaskService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/v1")
+@RequestMapping("/api/v1/tasks")
 public class TaskController {
 
-    @GetMapping()
-    public String getStringTest(){
-        return "Hello";
+    @Autowired
+    TaskService taskService;
+
+    @PostMapping
+    public Task createTask(@RequestBody TaskDTO taskDTO){
+     return taskService.createTask(taskDTO);
     }
 }
