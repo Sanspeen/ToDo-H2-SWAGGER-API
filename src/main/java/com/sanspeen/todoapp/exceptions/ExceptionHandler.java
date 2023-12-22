@@ -1,6 +1,5 @@
 package com.sanspeen.todoapp.exceptions;
 
-import com.sanspeen.todoapp.TodoappApplication;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;

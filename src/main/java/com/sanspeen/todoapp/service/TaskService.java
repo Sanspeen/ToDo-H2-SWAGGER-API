@@ -10,8 +10,6 @@ import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-
-import javax.swing.text.html.Option;
 import java.util.ArrayList;
 import java.util.Optional;
 
@@ -40,7 +38,15 @@ public class TaskService {
         if (task.isEmpty()){
             throw new ToDoExceptions("Task not found", HttpStatus.NOT_FOUND);
         }
-
         taskRepository.markTaskAsFinished(id);
     }
+
+    public void deleteById(Long id){
+        Optional<Task> task = taskRepository.findById(id);
+        if (task.isEmpty()){
+            throw new ToDoExceptions("Task not found", HttpStatus.NOT_FOUND);
+        }
+        taskRepository.deleteById(id);
+    }
+
 }
