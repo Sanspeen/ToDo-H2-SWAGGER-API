@@ -4,12 +4,10 @@ import com.sanspeen.todoapp.persistence.entity.Task;
 import com.sanspeen.todoapp.persistence.entity.TaskStatus;
 import com.sanspeen.todoapp.service.DTO.TaskDTO;
 import com.sanspeen.todoapp.service.TaskService;
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.net.http.HttpResponse;
 import java.util.ArrayList;
 
 @RestController
